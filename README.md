@@ -1,8 +1,8 @@
 # NexilFromNullFrame.github.io
 ## --TODO--
-- add tech stack
-- use Godot to make an interactive Portfolio
-- and so much more...
+- [ ] add tech stack
+- [x] use Godot to make an interactive Portfolio
+- [ ] and so much more...
 
 ## Credits and Attributions
 - Metro UI Icon Set - 725 Icons
