@@ -5,14 +5,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>NexilFromNullFrame Portfolio</title>
 	
+	<!-- RESTORED FAVICON ASSETS -->
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	
 	<!-- OPTION B: BLOCKING INITIALIZATION INLINE INJECTION -->
 	<script>
 		if ('serviceWorker' in navigator) {
-			// Register worker with explicit root subdirectory execution scopes
 			navigator.serviceWorker.register('./coi-serviceworker.js', { scope: './' })
 			.then(function (registration) {
 				console.log('COI Service Worker active under scope: ', registration.scope);
-				// If fully activated but browser security context isn't isolated yet
 				if (registration.active && !window.crossOriginIsolated) {
 					console.log('Security sandbox inactive. Forcing document reload sequence...');
 					window.location.reload();
