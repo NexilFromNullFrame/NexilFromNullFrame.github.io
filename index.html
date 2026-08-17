@@ -4,6 +4,21 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<title>Nexil's Portfolio</title>
+	<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('./coi-serviceworker.js', { scope: './' })
+			.then(function (registration) {
+				console.log('COI Service Worker active under scope: ', registration.scope);
+				if (registration.active && !window.crossOriginIsolated) {
+					console.log('Security sandbox inactive. Forcing document reload sequence...');
+					window.location.reload();
+				}
+			}).catch(function (error) {
+				console.error('COI Registration alignment crash: ', error);
+			});
+		}
+	</script>
+	
 	<style>
 		html, body {
 			margin: 0;
